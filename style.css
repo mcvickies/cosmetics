@@ -141,3 +141,30 @@ max-width:700px;
 margin:auto;
 text-align:left;
 }
+/* Logo in header */
+header .logo img{
+vertical-align:middle;
+}
+
+/* Testimonials */
+.testimonials .card{
+font-style:italic;
+}
+
+/* FAQ */
+.faq{
+max-width:700px;
+margin:auto;
+text-align:left;
+}
+
+/* Contact Form */
+form input, form textarea{
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+form input[type="submit"]{
+cursor:pointer;
+margin-top:10px;
+}
