@@ -168,3 +168,14 @@ form input[type="submit"]{
 cursor:pointer;
 margin-top:10px;
 }
+/* Mobile-friendly grid adjustments */
+@media (max-width:768px){
+.grid{
+grid-template-columns:1fr !important;
+gap:15px;
+}
+.hero h2{font-size:28px;}
+.hero p{font-size:16px;}
+header h1{font-size:20px;}
+nav a{margin-left:10px; font-size:14px;}
+}
