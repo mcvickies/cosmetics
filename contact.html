@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Contact</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - McVickies Enterprise</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
@@ -20,16 +21,27 @@
 
 <section class="container fade">
 
+<h2>Contact Us</h2>
+
 <div class="grid">
 <div class="card">📞 0244655510</div>
 <div class="card">📞 0244360356</div>
 <div class="card">📍 Adenta Newsite, Adjacent Leads Community School</div>
 </div>
 
-<br>
-
+<!-- GOOGLE MAP -->
 <iframe src="https://maps.google.com/maps?q=Adenta%20Newsite&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" height="300" style="border:0;border-radius:10px;"></iframe>
+width="100%" height="300" style="border:0;border-radius:10px;margin-top:20px;"></iframe>
+
+<!-- CONTACT FORM -->
+<div style="margin-top:30px;">
+<form action="mailto:harjeeborlarxeun@gmail.com" method="post" enctype="text/plain">
+<input type="text" name="name" placeholder="Your Name" required style="padding:10px;margin:5px;width:80%;"><br>
+<input type="email" name="email" placeholder="Your Email" required style="padding:10px;margin:5px;width:80%;"><br>
+<textarea name="message" placeholder="Your Message" required style="padding:10px;margin:5px;width:80%;height:100px;"></textarea><br>
+<input type="submit" class="btn whatsapp" value="Send Message">
+</form>
+</div>
 
 </section>
 
