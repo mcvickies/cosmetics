@@ -238,3 +238,9 @@ nav a{font-size:14px;}
     color:#ffd700; /* Gold for dark mode */
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
+.gallery img {
+  max-width:200px; /* or any size you want */
+  height:auto;
+  display:block;
+  margin:auto; /* centers the image inside the card */
+}
