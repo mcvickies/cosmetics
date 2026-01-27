@@ -3,6 +3,7 @@ box-sizing:border-box;
 margin:0;
 padding:0;
 font-family:Segoe UI,Arial,sans-serif;
+transition:all .25s ease;
 }
 
 body{
@@ -22,15 +23,19 @@ align-items:center;
 position:sticky;
 top:0;
 z-index:100;
+box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
-
-header h1{font-size:22px;}
 
 nav a{
 color:white;
 text-decoration:none;
 margin-left:20px;
 font-weight:500;
+}
+
+nav a:hover{
+opacity:.8;
+text-decoration:underline;
 }
 
 /* Sections */
@@ -50,14 +55,8 @@ background-position:center;
 color:white;
 }
 
-.hero h2{
-font-size:36px;
-margin-bottom:10px;
-}
-
-.hero p{
-margin-bottom:25px;
-}
+.hero h2{font-size:36px;margin-bottom:10px;}
+.hero p{margin-bottom:25px;}
 
 /* Buttons */
 .btn{
@@ -69,8 +68,16 @@ cursor:pointer;
 margin:8px;
 }
 
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 6px 15px rgba(0,0,0,.15);
+}
+
 .whatsapp{background:#25D366;color:white;}
 .call{background:#0b4aa2;color:white;}
+
+.whatsapp:hover{background:#1ebe5b;}
+.call:hover{background:#083b82;}
 
 /* Cards */
 .grid{
@@ -87,10 +94,9 @@ border-radius:10px;
 box-shadow:0 4px 10px rgba(0,0,0,.05);
 }
 
-/* Gallery */
-.gallery img{
-width:100%;
-border-radius:10px;
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
 
 /* Footer */
@@ -102,7 +108,7 @@ padding:25px;
 margin-top:40px;
 }
 
-/* WhatsApp Floating */
+/* Floating WhatsApp */
 .float{
 position:fixed;
 bottom:20px;
@@ -113,121 +119,6 @@ padding:14px;
 border-radius:50%;
 text-decoration:none;
 font-size:20px;
-}
-
-/* Animation */
-.fade{
-animation:fadeIn 1.2s ease;
-}
-
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;}
-}
-
-/* Mobile */
-@media(max-width:600px){
-header{flex-direction:column;gap:10px;}
-.hero h2{font-size:28px;}
-}
-/* Testimonials */
-.testimonials .card{
-font-style:italic;
-}
-
-/* FAQ */
-.faq{
-max-width:700px;
-margin:auto;
-text-align:left;
-}
-/* Logo in header */
-header .logo img{
-vertical-align:middle;
-}
-
-/* Testimonials */
-.testimonials .card{
-font-style:italic;
-}
-
-/* FAQ */
-.faq{
-max-width:700px;
-margin:auto;
-text-align:left;
-}
-
-/* Contact Form */
-form input, form textarea{
-border:1px solid #ccc;
-border-radius:6px;
-}
-
-form input[type="submit"]{
-cursor:pointer;
-margin-top:10px;
-}
-/* Mobile-friendly grid adjustments */
-@media (max-width:768px){
-.grid{
-grid-template-columns:1fr !important;
-gap:15px;
-}
-.hero h2{font-size:28px;}
-.hero p{font-size:16px;}
-header h1{font-size:20px;}
-nav a{margin-left:10px; font-size:14px;}
-}
-#topBtn {
-  display:none; position:fixed; bottom:5px; right:5px;
-  background:#4CAF50; color:white; border:none; padding:10px 15px;
-  border-radius:50%; cursor:pointer; font-size:10px;
-}
-#topBtn:hover { background:#45a049; }
-/* ================= ADVANCED ENHANCEMENTS ================= */
-
-/* Smooth global transitions */
-*{
-transition:all .25s ease;
-}
-
-/* Header shadow */
-header{
-box-shadow:0 2px 10px rgba(0,0,0,.15);
-}
-
-/* Nav hover */
-nav a:hover{
-opacity:.8;
-text-decoration:underline;
-}
-
-/* Button hover */
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 6px 15px rgba(0,0,0,.15);
-}
-
-.whatsapp:hover{background:#1ebe5b;}
-.call:hover{background:#083b82;}
-
-/* Card hover animation */
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
-
-/* Gallery zoom */
-.gallery img{
-transition:transform .4s ease;
-}
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-/* Floating WhatsApp pulse */
-.float{
 animation:pulse 2s infinite;
 }
 
@@ -237,73 +128,29 @@ animation:pulse 2s infinite;
 100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
 
-/* Form focus */
-form input:focus,
-form textarea:focus{
-outline:none;
-border-color:#0b4aa2;
-box-shadow:0 0 5px rgba(11,74,162,.4);
-}
-
-/* Submit hover */
-form input[type="submit"]:hover{
-background:#083b82;
-color:white;
-}
-
-/* Fade stagger */
-.grid .card{
-animation:fadeIn .8s ease both;
-}
+/* Fade */
+.fade{opacity:0;transform:translateY(30px);}
+.fade.active{opacity:1;transform:none;}
 
 /* Scrollbar */
-::-webkit-scrollbar{
-width:8px;
-}
-::-webkit-scrollbar-track{
-background:#eee;
-}
-::-webkit-scrollbar-thumb{
-background:#0b4aa2;
-border-radius:10px;
-}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-thumb{background:#0b4aa2;border-radius:10px;}
 
-/* Back to top hover */
-#topBtn:hover{
-transform:scale(1.1);
-}
-
-/* Hero text glow */
-.banner h2{
-text-shadow:0 2px 8px rgba(0,0,0,.5);
-}
-
-/* Footer links */
-footer a{
+/* Top Button */
+#topBtn{
+display:none;
+position:fixed;
+bottom:5px;
+right:5px;
+background:#4CAF50;
 color:white;
-text-decoration:none;
-}
-footer a:hover{
-text-decoration:underline;
-}
-
-/* Image smoothing */
-img{
-display:block;
-max-width:100%;
+border:none;
+padding:10px 15px;
+border-radius:50%;
+cursor:pointer;
 }
 
-/* Mobile touch improvement */
-@media(max-width:600px){
-.btn{
-width:100%;
-}
-/* ===== Dark Mode ===== */
-.dark header,.dark footer{background:#000;}
-.dark .card{background:#1b1b1b;}
-.dark nav a{color:white;}
-
-/* Toggle Button */
+/* Dark Toggle */
 #darkToggle{
 position:fixed;
 left:15px;
@@ -314,9 +161,10 @@ border:none;
 padding:10px;
 border-radius:50%;
 cursor:pointer;
+z-index:100001;
 }
 
-/* Page Loader */
+/* Loader */
 #loader{
 position:fixed;
 top:0;left:0;
@@ -325,7 +173,7 @@ background:white;
 display:flex;
 align-items:center;
 justify-content:center;
-z-index:9999;
+z-index:100000;
 }
 
 .spinner{
@@ -338,23 +186,6 @@ animation:spin 1s linear infinite;
 
 @keyframes spin{to{transform:rotate(360deg);}}
 
-/* Shrink Header */
-.shrink{
-padding:8px 40px!important;
-}
-
-/* Slide Sections */
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:.8s;
-}
-
-.reveal.active{
-opacity:1;
-transform:none;
-}
-
 /* Modal */
 .modal{
 display:none;
@@ -364,6 +195,7 @@ width:100%;height:100%;
 background:rgba(0,0,0,.7);
 align-items:center;
 justify-content:center;
+z-index:99999;
 }
 
 .modal-content{
@@ -374,14 +206,21 @@ max-width:400px;
 text-align:center;
 }
 
-.modal-content button{
-margin-top:15px;
-}
+/* Shrink Header */
+.shrink{padding:8px 40px!important;}
 
-/* Mobile modal */
-@media(max-width:600px){
-.btn{
-width:100%;
-}
+/* DARK MODE */
+html.dark,html.dark body{background:#111;color:#eee;}
+html.dark .container{color:#eee;}
+html.dark .card{background:#1b1b1b;color:#eee;}
+html.dark header,html.dark footer{background:#000;}
+html.dark nav a{color:white;}
+html.dark .modal-content{background:#1b1b1b;color:white;}
+
+/* Mobile */
+@media(max-width:768px){
+.grid{grid-template-columns:1fr;}
+nav a{font-size:14px;}
+.btn{width:100%;}
 .modal-content{width:90%;}
 }
