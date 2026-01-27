@@ -17,8 +17,9 @@
 </head>
 
 <body>
-<!-- Page Loader -->
-<div id="loader"><div class="spinner"></div></div>
+<div id="loader">
+<div class="spinner"></div>
+</div>
 
 <!-- Dark Mode Toggle -->
 <button id="darkToggle">🌙</button>
@@ -193,6 +194,11 @@ McVickies Enterprise © 2026
     <button onclick="closeModal()" class="btn call">Close</button>
   </div>
 </div>
-
+<script>
+window.addEventListener("load",function(){
+document.getElementById("loader").style.display="none";
+});
+</script>
+  
 </body>
 </html>
