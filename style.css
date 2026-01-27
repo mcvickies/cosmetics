@@ -180,7 +180,7 @@ header h1{font-size:20px;}
 nav a{margin-left:10px; font-size:14px;}
 }
 #topBtn {
-  display:none; position:fixed; bottom:10px; right:10px;
+  display:none; position:fixed; bottom:5px; right:5px;
   background:#4CAF50; color:white; border:none; padding:10px 15px;
   border-radius:30%; cursor:pointer; font-size:15px;
 }
