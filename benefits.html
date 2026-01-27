@@ -119,7 +119,11 @@ window.addEventListener("scroll",()=>{
 
 function closeModal(){popup.style.display="none";}
 function openWhatsApp(){location.href="https://wa.me/233243952644";}
-</script>
+// Reveal all sections immediately on load
+window.addEventListener("load", () => {
+  const reveals = document.querySelectorAll(".fade");
+  reveals.forEach(r => r.classList.add("active"));
+});
 
 </body>
 </html>
