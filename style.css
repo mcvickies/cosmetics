@@ -238,9 +238,28 @@ nav a{font-size:14px;}
     color:#ffd700; /* Gold for dark mode */
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
-.gallery img {
-  max-width:100px; /* or any size you want */
+/* Product image sizing – FINAL FIX */
+.gallery{
+  text-align:center;
+}
+
+.gallery img{
+  width:auto;
+  max-width:220px;
   height:auto;
+  margin:auto;
   display:block;
-  margin:auto; /* centers the image inside the card */
+  border-radius:12px;
+}
+
+/* Mobile size */
+@media(max-width:768px){
+  .gallery img{
+    max-width:160px;
+  }
+}
+.gallery .card{
+  padding:10px;
+  display:flex;
+  justify-content:center;
 }
