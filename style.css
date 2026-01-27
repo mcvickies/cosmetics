@@ -299,7 +299,11 @@ max-width:100%;
 width:100%;
 }
 /* ===== Dark Mode ===== */
-.dark body{background:#111;color:#eee;}
+.dark{background:#111;color:#eee;}
+.dark .container{color:#eee;}
+.dark .card{background:#1b1b1b;color:#eee;}
+.dark header,.dark footer{background:#000;}
+.dark nav a{color:white;}
 .dark header,.dark footer{background:#000;}
 .dark .card{background:#1b1b1b;}
 .dark nav a{color:white;}
