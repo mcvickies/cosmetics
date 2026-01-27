@@ -299,11 +299,6 @@ max-width:100%;
 width:100%;
 }
 /* ===== Dark Mode ===== */
-.dark{background:#111;color:#eee;}
-.dark .container{color:#eee;}
-.dark .card{background:#1b1b1b;color:#eee;}
-.dark header,.dark footer{background:#000;}
-.dark nav a{color:white;}
 .dark header,.dark footer{background:#000;}
 .dark .card{background:#1b1b1b;}
 .dark nav a{color:white;}
@@ -385,6 +380,8 @@ margin-top:15px;
 
 /* Mobile modal */
 @media(max-width:600px){
+.btn{
+width:100%;
+}
 .modal-content{width:90%;}
 }
-
