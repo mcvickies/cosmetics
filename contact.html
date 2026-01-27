@@ -8,44 +8,102 @@
 </head>
 <body>
 
+<!-- Page Loader -->
+<div id="loader"><div class="spinner"></div></div>
+
+<!-- Dark Mode Toggle -->
+<button id="darkToggle">🌙</button>
+
+<!-- Header -->
 <header>
-<h1>Contact</h1>
-<nav>
-<a href="index.html">Home</a>
-<a href="product.html">Product</a>
-<a href="benefits.html">Benefits</a>
-<a href="wholesale.html">Wholesale</a>
-<a href="contact.html">Contact</a>
-</nav>
+  <div class="logo" style="display:flex; align-items:center; gap:12px;">
+    <img src="assets/logo.png" height="50" alt="McVickies Enterprise Logo" style="border-radius:8px;">
+    <h1 class="company-name">McVickies Enterprise</h1>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="product.html">Product</a>
+    <a href="benefits.html">Benefits</a>
+    <a href="wholesale.html">Wholesale</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
 </header>
 
+<!-- Floating WhatsApp -->
+<a class="float" href="https://wa.me/233244655510">💬</a>
+
+<!-- Contact Section -->
 <section class="container fade">
+  <h2>Contact Us</h2>
 
-<h2>Contact Us</h2>
+  <div class="grid">
+    <div class="card">📞 0244655510</div>
+    <div class="card">📞 0244360356</div>
+    <div class="card">📍 Adenta Newsite, Adjacent Leads Community School</div>
+  </div>
 
-<div class="grid">
-<div class="card">📞 0244655510</div>
-<div class="card">📞 0244360356</div>
-<div class="card">📍 Adenta Newsite, Adjacent Leads Community School</div>
-</div>
+  <!-- Google Map -->
+  <iframe src="https://maps.google.com/maps?q=Adenta%20Newsite&t=&z=13&ie=UTF8&iwloc=&output=embed"
+  width="100%" height="300" style="border:0;border-radius:10px;margin-top:20px;"></iframe>
 
-<!-- GOOGLE MAP -->
-<iframe src="https://maps.google.com/maps?q=Adenta%20Newsite&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" height="300" style="border:0;border-radius:10px;margin-top:20px;"></iframe>
-
-<!-- CONTACT FORM -->
-<div style="margin-top:30px;text-align:center;">
-<form action="mailto:mcvickies35@gmail.com?subject=Website Contact Form" method="post" enctype="text/plain">
-<input type="text" name="name" placeholder="Your Name" required style="padding:10px;margin:5px;width:80%;"><br>
-<input type="email" name="email" placeholder="Your Email" required style="padding:10px;margin:5px;width:80%;"><br>
-<textarea name="message" placeholder="Your Message" required style="padding:10px;margin:5px;width:80%;height:100px;"></textarea><br>
-<input type="submit" class="btn whatsapp" value="Send Message">
-</form>
-</div>
-
+  <!-- Contact Form -->
+  <div style="margin-top:30px;text-align:center;">
+    <form action="mailto:mcvickies35@gmail.com?subject=Website Contact Form" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required style="padding:14px;margin:5px;width:80%;"><br>
+      <input type="email" name="email" placeholder="Your Email" required style="padding:14px;margin:5px;width:80%;"><br>
+      <textarea name="message" placeholder="Your Message" required style="padding:14px;margin:5px;width:80%;height:120px;"></textarea><br>
+      <input type="submit" class="btn whatsapp" value="Send Message">
+    </form>
+  </div>
 </section>
 
+<!-- Back to Top -->
+<button id="topBtn">↑</button>
+
+<!-- Footer -->
 <footer>McVickies Enterprise © 2026</footer>
+
+<!-- Popup -->
+<div class="modal" id="popup">
+  <div class="modal-content">
+    <h3>Welcome!</h3>
+    <p>Chat with us on WhatsApp for fast service.</p>
+    <button class="btn whatsapp" onclick="openWhatsApp()">Open WhatsApp</button><br><br>
+    <button class="btn call" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script>
+const topBtn=document.getElementById("topBtn");
+const darkToggle=document.getElementById("darkToggle");
+const loader=document.getElementById("loader");
+const popup=document.getElementById("popup");
+
+window.addEventListener("scroll",()=>{
+  topBtn.style.display = window.scrollY>200?"block":"none";
+  document.querySelector("header").classList.toggle("shrink",window.scrollY>50);
+});
+
+topBtn.onclick = ()=>window.scrollTo({top:0, behavior:"smooth"});
+
+window.addEventListener("load",()=>{
+  loader.style.display="none";
+  setTimeout(()=>popup.style.display="flex",2000);
+});
+
+darkToggle.onclick = ()=>document.documentElement.classList.toggle("dark");
+
+const reveals=document.querySelectorAll(".fade");
+window.addEventListener("scroll",()=>{
+  reveals.forEach(r=>{
+    if(r.getBoundingClientRect().top < window.innerHeight-50) r.classList.add("active");
+  });
+});
+
+function closeModal(){popup.style.display="none";}
+function openWhatsApp(){location.href="https://wa.me/233244655510";}
+</script>
 
 </body>
 </html>
