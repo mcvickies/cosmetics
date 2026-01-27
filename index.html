@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>McVickies Enterprise | Baby Oral Care Ghana</title>
-<meta name="description" content="McVickies Enterprise supplies Darl Oral Brush Up baby oral wipes in Ghana. Retail and wholesale available.">
+<title>McVickies Enterprise | Darl Oral Brush Up</title>
 
 <link rel="icon" href="assets/favicon.png">
 <link rel="stylesheet" href="style.css">
@@ -13,18 +12,22 @@
 
 <body>
 
+<!-- Loader -->
 <div id="loader"><div class="spinner"></div></div>
 
+<!-- Dark toggle -->
 <button id="darkToggle">🌙</button>
 
 <header>
-<div class="logo"><img src="assets/logo.png" height="50"></div>
+<div class="logo">
+<img src="assets/logo.png" height="50">
+</div>
 <nav>
-<a href="#">Home</a>
-<a href="#">Product</a>
-<a href="#">Benefits</a>
-<a href="#">Wholesale</a>
-<a href="#">Contact</a>
+<a href="index.html">Home</a>
+<a href="product.html">Product</a>
+<a href="benefits.html">Benefits</a>
+<a href="wholesale.html">Wholesale</a>
+<a href="contact.html">Contact</a>
 </nav>
 </header>
 
@@ -34,14 +37,14 @@
 <div class="container">
 <h2>New Advanced Darl Oral Brush Up</h2>
 <p>Gentle oral cleaning wipes for healthy baby mouths</p>
-<button class="btn whatsapp" onclick="openWhatsApp()">Order on WhatsApp</button>
+<a href="https://wa.me/233244655510"><button class="btn whatsapp">Order on WhatsApp</button></a>
 <a href="tel:0244655510"><button class="btn call">Call Now</button></a>
 </div>
 </section>
 
 <section class="container fade">
 <h2>About Us</h2>
-<p>McVickies Enterprise supplies trusted baby oral care products in Ghana. We support parents with safe and hygienic solutions.</p>
+<p>McVickies Enterprise supplies trusted baby oral care products in Ghana.</p>
 </section>
 
 <section class="container fade">
@@ -51,15 +54,6 @@
 <div class="card">Safe & Hygienic</div>
 <div class="card">Easy Daily Cleaning</div>
 <div class="card">Trusted by Parents</div>
-</div>
-</section>
-
-<section class="container fade">
-<h2>Product Gallery</h2>
-<div class="grid gallery">
-<img src="assets/p1.jpg">
-<img src="assets/p2.jpg">
-<img src="assets/p3.jpg">
 </div>
 </section>
 
@@ -77,7 +71,7 @@
 <h2>Wholesale</h2>
 <div class="grid">
 <div class="card">Bulk Supply</div>
-<div class="card">Affordable Prices</div>
+<div class="card">Affordable</div>
 <div class="card">Fast Delivery</div>
 </div>
 </section>
@@ -85,32 +79,31 @@
 <section class="container fade">
 <h2>Testimonials</h2>
 <div class="grid testimonials">
-<div class="card">“Very gentle on my baby!”</div>
-<div class="card">“Easy to use and effective.”</div>
-<div class="card">“Fast delivery and great service.”</div>
+<div class="card">Very gentle!</div>
+<div class="card">Easy to use</div>
+<div class="card">Fast service</div>
 </div>
 </section>
 
 <section class="container fade">
 <h2>FAQ</h2>
-
-<div class="card faqItem">Is it safe? – Yes, for newborns.</div>
-<div class="card faqItem">Daily use? – Yes.</div>
-<div class="card faqItem">Wholesale? – Nationwide.</div>
-
+<div class="faq">
+<p><b>Safe?</b> Yes.</p><br>
+<p><b>Daily use?</b> Yes.</p><br>
+<p><b>Wholesale?</b> Yes.</p>
+</div>
 </section>
 
 <section class="container fade">
 <h2>Contact</h2>
-
 <div class="grid">
-<div class="card">📞 0244655510</div>
-<div class="card">📞 0244360356</div>
-<div class="card">📍 Adenta Newsite</div>
+<div class="card">0244655510</div>
+<div class="card">0244360356</div>
+<div class="card">Adenta Newsite</div>
 </div>
 
-<iframe src="https://maps.google.com/maps?q=Adenta%20Newsite&output=embed"
-width="100%" height="300" style="border-radius:10px;margin-top:20px;"></iframe>
+<iframe src="https://maps.google.com/maps?q=Adenta%20Newsite&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="300" style="border:0;border-radius:10px;margin-top:20px;"></iframe>
 
 <form action="mailto:mcvickies35@gmail.com" method="post" style="margin-top:20px">
 <input placeholder="Name" required><br><br>
@@ -123,17 +116,14 @@ width="100%" height="300" style="border-radius:10px;margin-top:20px;"></iframe>
 
 <button id="topBtn">↑</button>
 
-<footer>
-<p>McVickies Enterprise © 2026</p>
-<p>Baby Oral Care Specialists – Ghana</p>
-</footer>
+<footer>McVickies Enterprise © 2026</footer>
 
 <!-- Popup -->
 <div class="modal" id="popup">
 <div class="modal-content">
-<h3>Welcome 👋</h3>
-<p>Chat with us on WhatsApp</p>
-<button class="btn whatsapp" onclick="openWhatsApp()">Open WhatsApp</button><br><br>
+<h3>Welcome</h3>
+<p>Chat on WhatsApp</p>
+<button class="btn whatsapp" onclick="openWhatsApp()">Open</button><br><br>
 <button class="btn call" onclick="closeModal()">Close</button>
 </div>
 </div>
@@ -146,24 +136,26 @@ const topBtn=document.getElementById("topBtn");
 
 window.onload=()=>{
 loader.style.display="none";
-if(!localStorage.popup){
-popup.style.display="flex";
-localStorage.popup=true;
-}
-if(localStorage.dark==="on") document.documentElement.classList.add("dark");
+setTimeout(()=>popup.style.display="flex",2000);
 };
 
-darkToggle.onclick=()=>{
-document.documentElement.classList.toggle("dark");
-localStorage.dark=document.documentElement.classList.contains("dark")?"on":"off";
-};
+setTimeout(()=>loader.style.display="none",3000);
 
-window.onscroll=()=>{
+darkToggle.onclick=()=>document.documentElement.classList.toggle("dark");
+
+window.addEventListener("scroll",()=>{
 topBtn.style.display=scrollY>200?"block":"none";
 document.querySelector("header").classList.toggle("shrink",scrollY>50);
-};
+});
 
 topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+
+const fades=document.querySelectorAll(".fade");
+window.addEventListener("scroll",()=>{
+fades.forEach(f=>{
+if(f.getBoundingClientRect().top<innerHeight-50) f.classList.add("active");
+});
+});
 
 function closeModal(){popup.style.display="none";}
 function openWhatsApp(){location.href="https://wa.me/233244655510";}
