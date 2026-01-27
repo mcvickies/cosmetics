@@ -17,6 +17,11 @@
 </head>
 
 <body>
+<!-- Page Loader -->
+<div id="loader"><div class="spinner"></div></div>
+
+<!-- Dark Mode Toggle -->
+<button id="darkToggle">🌙</button>
 
 <!-- HEADER -->
 <header>
@@ -140,10 +145,54 @@ const topBtn = document.getElementById('topBtn');
 window.onscroll = () => topBtn.style.display = (window.scrollY > 200) ? 'block' : 'none';
 topBtn.onclick = () => window.scrollTo({top:0, behavior:'smooth'});
 </script>
+// Loader + popup
+window.addEventListener("load",()=>{
+document.getElementById("loader").style.display="none";
+setTimeout(()=>{document.getElementById("popup").style.display="flex";},2000);
+});
+
+// Dark mode
+document.getElementById("darkToggle").onclick=()=>{
+document.documentElement.classList.toggle("dark");
+};
+
+// Shrinking header
+window.addEventListener("scroll",()=>{
+document.querySelector("header").classList.toggle("shrink",window.scrollY>50);
+});
+
+// Reveal animation (uses your existing sections)
+const reveals=document.querySelectorAll(".fade");
+window.addEventListener("scroll",()=>{
+reveals.forEach(r=>{
+if(r.getBoundingClientRect().top<window.innerHeight-50){
+r.classList.add("active");
+}
+});
+});
+
+// Modal functions
+function closeModal(){
+document.getElementById("popup").style.display="none";
+}
+
+function openWhatsApp(){
+window.location.href="https://wa.me/233244655510?text=Hello%20McVickies%20Enterprise,%20I%20want%20to%20order%20Darl%20Oral%20Brush%20Up.";
+}
+</script>
 
 <footer>
 McVickies Enterprise © 2026
 </footer>
+<!-- Welcome Modal -->
+<div class="modal" id="popup">
+  <div class="modal-content">
+    <h3>Welcome!</h3>
+    <p>Chat with us on WhatsApp for fast service.</p>
+    <button onclick="openWhatsApp()" class="btn whatsapp">Open WhatsApp</button><br><br>
+    <button onclick="closeModal()" class="btn call">Close</button>
+  </div>
+</div>
 
 </body>
 </html>
