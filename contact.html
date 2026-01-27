@@ -103,7 +103,17 @@ window.addEventListener("scroll",()=>{
 
 function closeModal(){popup.style.display="none";}
 function openWhatsApp(){location.href="https://wa.me/233243952644";}
-</script>
 
+// Make all .fade sections visible immediately
+window.addEventListener("load", () => {
+  const reveals = document.querySelectorAll(".fade");
+  reveals.forEach(r => r.classList.add("active"));
+
+  // If you want a popup on other pages, you can also show it here
+  // const popup = document.getElementById("popup");
+  // if(popup) popup.style.display = "flex";
+});
+</script>
+  
 </body>
 </html>
