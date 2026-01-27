@@ -144,7 +144,7 @@ width="100%" height="300" style="border:0;border-radius:10px;margin-top:20px;"><
 const topBtn = document.getElementById('topBtn');
 window.onscroll = () => topBtn.style.display = (window.scrollY > 200) ? 'block' : 'none';
 topBtn.onclick = () => window.scrollTo({top:0, behavior:'smooth'});
-</script>
+  <script>
 // Loader + popup
 window.addEventListener("load",()=>{
 document.getElementById("loader").style.display="none";
@@ -161,7 +161,7 @@ window.addEventListener("scroll",()=>{
 document.querySelector("header").classList.toggle("shrink",window.scrollY>50);
 });
 
-// Reveal animation (uses your existing sections)
+// Reveal animation
 const reveals=document.querySelectorAll(".fade");
 window.addEventListener("scroll",()=>{
 reveals.forEach(r=>{
@@ -171,7 +171,7 @@ r.classList.add("active");
 });
 });
 
-// Modal functions
+// Modal
 function closeModal(){
 document.getElementById("popup").style.display="none";
 }
