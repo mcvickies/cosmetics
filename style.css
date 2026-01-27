@@ -182,6 +182,6 @@ nav a{margin-left:10px; font-size:14px;}
 #topBtn {
   display:none; position:fixed; bottom:5px; right:5px;
   background:#4CAF50; color:white; border:none; padding:10px 15px;
-  border-radius:20%; cursor:pointer; font-size:15px;
+  border-radius:50%; cursor:pointer; font-size:10px;
 }
 #topBtn:hover { background:#45a049; }
